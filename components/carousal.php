@@ -27,21 +27,21 @@
   </ul>
   <div class="carousel-inner" style="height: 550px;">
     <div class="carousel-item active">
-      <img src="b1.jpg" style="height: 550px; width: 100%;">
+      <img src="images/b1.jpg" style="height: 550px; width: 100%;">
       <div class="carousel-caption">
         <h3>10% OFF</h3>
         <p>*ON ORDERS ABOVE 200!</p>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="b2.jpg" style="height: 550px; width: 100%;">
+      <img src="images/b2.jpg" style="height: 550px; width: 100%;">
       <div class="carousel-caption">
        <h3>10% OFF</h3>
         <p>*ON ORDERS ABOVE 200!</p>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="b3.jpg" style="height: 550px; width: 100%;">
+      <img src="images/b3.jpg" style="height: 550px; width: 100%;">
       <div class="carousel-caption">
        <h3>10% OFF</h3>
         <p>*ON ORDERS ABOVE 200!</p>

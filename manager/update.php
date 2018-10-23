@@ -68,6 +68,7 @@
             </tr>  
             </thead>  
 
+
 <?php
     if(isset($_POST['submit']))
     {
@@ -103,6 +104,29 @@
   
         }
 
+    }
+    else
+    { 
+        include("dbcon.php");  
+        $view_users_query="select * from employee where mid=".$_SESSION['mid'];//select query for viewing users.  
+        $run=mysqli_query($con,$view_users_query);//here run the sql query.  
+  
+        while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+        {  
+            $user_id=$row[0];  
+       
+        ?>  
+  
+        <tr>  
+<!--here showing results in the table -->  
+            <td><?php echo $user_id;  ?></td>  
+            <td><?php echo $row['name'];  ?></td>  
+            <td><?php echo $row['mail'];  ?></td>  
+            <td><?php echo $row['phone'];  ?></td>
+            <td><?php echo $row['password'];  ?></td>  
+            <td><a href="updateemp.php?eid=<?php echo $row['eid'];?>"><button class="btn btn-warning"><span class="fa fa-edit"></span> Update</button></a></td>
+        </tr> 
+        <?php } 
     }
 ?>
     </table>
