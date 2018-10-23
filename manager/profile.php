@@ -42,9 +42,12 @@ include("dbcon.php");
                             <div class="form-group">  
                               Your name: <input class="form-control" name="name" type="text" value=<?php echo $data['name']; ?> readonly="readonly" >  
                             </div>  
-                           
+                           <div class="form-group">  
+                               Your phone no: <input class="form-control" name="pno" type="text" value=<?php echo $data['pno']; ?> readonly="readonly" > 
+                           </div> 
+
                             <div class="form-group">  
-                              Your password: <input class="form-control" name="pass" type="password" value=<?php echo $data['password']; ?>readonly="readonly" >  
+                            	Your password: <input class="form-control" name="pass" type="password" value=<?php echo $data['password']; ?> readonly="readonly" >
                             </div>  
   
                         </fieldset>  

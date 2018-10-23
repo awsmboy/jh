@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2018 at 05:17 AM
+-- Generation Time: Oct 23, 2018 at 04:06 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -55,7 +55,8 @@ INSERT INTO `bill` (`bid`, `cid`, `amount`, `btime`) VALUES
 (64, 105, 1000, '2018-10-12 23:05:14'),
 (65, 105, 400, '2018-10-11 23:05:14'),
 (66, 105, 500, '2018-10-13 00:01:42'),
-(67, 105, 1800, '2018-10-14 23:30:47');
+(67, 105, 1800, '2018-10-14 23:30:47'),
+(68, 129, 630, '2018-10-15 16:46:26');
 
 --
 -- Triggers `bill`
@@ -149,7 +150,9 @@ INSERT INTO `contains` (`id`, `oid`, `iid`, `quantity`) VALUES
 (61, 94, 12, 5),
 (62, 94, 11, 2),
 (63, 94, 9, 200),
-(64, 95, 11, 6);
+(64, 95, 11, 6),
+(65, 96, 9, 3),
+(66, 96, 13, 2);
 
 -- --------------------------------------------------------
 
@@ -175,7 +178,8 @@ INSERT INTO `customer` (`cid`, `name`, `pno`, `address`) VALUES
 (113, 'Sanket', 8806852776, 'Pune'),
 (122, 'Omkar', 9970808317, 'Pune'),
 (123, 'a', 9876543210, 'k'),
-(128, 'Rahul', 7777777777, 'Pune');
+(128, 'Rahul', 7777777777, 'Pune'),
+(129, 'Rahul', 7771234566, 'goa');
 
 -- --------------------------------------------------------
 
@@ -293,7 +297,8 @@ INSERT INTO `ord` (`oid`, `no_of_item`, `eid`, `status`, `cid`, `otime`) VALUES
 (92, 1, 17, 'paid', 105, '2018-10-10 00:27:52'),
 (93, 1, 17, 'paid', 122, '2018-10-10 00:49:49'),
 (94, 4, 17, 'paid', 128, '2018-10-10 00:56:45'),
-(95, 1, 17, 'paid', 105, '2018-10-15 02:25:03');
+(95, 1, 17, 'paid', 105, '2018-10-15 02:25:03'),
+(96, 2, 19, 'paid', 129, '2018-10-15 16:46:13');
 
 --
 -- Indexes for dumped tables
@@ -371,7 +376,7 @@ ALTER TABLE `ord`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `cafe`
@@ -383,7 +388,7 @@ ALTER TABLE `cafe`
 -- AUTO_INCREMENT for table `contains`
 --
 ALTER TABLE `contains`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -413,7 +418,7 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `ord`
 --
 ALTER TABLE `ord`
-  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- Constraints for dumped tables
