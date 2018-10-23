@@ -36,30 +36,30 @@
                         <legend class="text-center header">Contact us</legend>
                         <div class="form-group">
                             <div class="col-md-10 offset-md-1">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control" pattern="[A-Za-z ]+" title="Only Letters allowed" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-10 offset-md-1">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-10 offset-md-1">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control" pattern="[A-Za-z ]+" title="Only Letters allowed" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-10 offset-md-1">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                <input id="email" name="email" type="email" placeholder="Email Address" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-10 offset-md-1">
-                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                                <input id="phone" name="phone" type="text" placeholder="Phone" pattern="[0-9]{10}" title="Enter valid Phone number" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10 offset-md-1">
+                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7" required></textarea>
                             </div>
                         </div>
 
