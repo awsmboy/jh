@@ -96,6 +96,32 @@
                 }
             }
         }
+        else
+        {
+        	include("dbcon.php");  
+            $view_query="select * from item";//select query for viewing users.  
+            $run=mysqli_query($con,$view_query);//here run the sql query.  
+      
+            while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+            {  
+                $id=$row[0];  
+                $name=$row[1];
+                $price=$row[2];  
+                $img=$row[3];      
+            ?>  
+      
+            <tr>  
+            <!--here showing results in the table -->  
+            <td><?php echo $id;  ?></td>  
+            <td><?php echo $row['idesc'];  ?></td>   
+            <td><?php echo $row['price'];  ?></td>
+            <td><img src="images/<?php echo $row['img']; ?>"  style="max-width:100px;max-height:100px;"></td>
+
+           <td><a href="updateitemdata.php?id=<?php echo $row['iid'];?>"><button class="btn btn-warning"><span class="fa fa-edit"></span> Update</button></a></td> 
+            </tr>  
+      
+            <?php } 
+        }
     ?>
     </table>
     </div>
