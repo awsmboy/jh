@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">        </script>
      
-    <title>Insertion</title>  
+    <title>Add Employee</title>  
 </head>  
   
 <body>  
@@ -25,7 +25,7 @@
  		<div class="col-md-5  ">
  			<div class="card">
   				<div class="card-body">  
-                    <h3 class="panel-title"> <img class="mb-6" src="images\u2.png" alt="" width="40" height="40"> Insert Employee details</h3> 
+                    <h3 class="panel-title"> <img class="mb-6" src="images\u2.png" alt="" width="40" height="40"> ADD Employee details</h3> 
                     <form role="form" method="post" action="insertemp.php">  
                 			<fieldset>
                         	<div class="form-group ">
@@ -63,7 +63,7 @@ if(isset($_POST['register']))
 {  
     $emp_name=$_POST['name'];//here getting result from the post array after submitting the form. 
     $emp_phone=$_POST['phone']; 
-    $emp_pass=$_POST['pass'];//same  
+    $emp_pass=md5($_POST['pass']);//same  
     $emp_email=$_POST['email'];//same  
   
 //here query check weather if emp already registered so can't register again.  

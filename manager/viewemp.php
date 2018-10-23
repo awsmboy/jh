@@ -54,7 +54,7 @@
             <th>User Name</th>  
             <th>User E-mail</th>
             <th>User Phone</th>  
-            <th>User Pass</th>  
+              
             <th>Delete User</th>  
         </tr>  
         </thead>  
@@ -80,7 +80,7 @@
             <td><?php echo $user_name;  ?></td>  
             <td><?php echo $user_email;  ?></td>  
             <td><?php echo $user_phone;  ?></td>
-            <td><?php echo $user_pass;  ?></td>  
+            
             <td><a href="deleteemp.php?del=<?php echo $user_id ?>"><button class="btn btn-danger"><span class="fa fa-trash"></span> Delete</button></a></td> 
         </tr>  
   

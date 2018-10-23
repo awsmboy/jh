@@ -32,20 +32,23 @@
   <div class="col-md-5  ">
  <div class="card">
   <div class="card-body">  
+    <?php
+    if(isset($_GET['s'])==1)
+    {
+    ?>
+    <div class="alert alert-success" style="text-align: center;">
+      <a href="/bill" class="close" data-dismiss="alert">&times;</a>
+        <strong>Order Added!! </strong><hr> <a href="./bill" > Click to genrate bill  </a>
+    </div>
+    <?php
+    }
+  ?>
 <h2 align="center">Add Order</h2><br>
  
     </head>
     <body>
      
-<?php
-if(isset($_GET['s']))
-{
-  if($_GET['s']==1)
-    {
-    echo "<script type='text/javascript'>alert( 'Sucess' );</script>";
-    }
-}
-?>
+
 
 <form action="process.php" method="post">
      <div class="form-group ">
@@ -59,7 +62,7 @@ if(isset($_GET['s']))
 </div>   --> 
 
       <label for="name">Customer Name</label>
-      <input type="text" name="name" required class="form-control" id="name" placeholder="Name">
+      <input type="text" name="name" pattern="[A-Za-z]+" title="Enter Valid Name" required class="form-control" id="name" placeholder="Name">
     </div>
     
  
@@ -92,7 +95,7 @@ if(isset($_GET['s']))
 
  <div class="form-group">
    <label for="iname">Item Name</label>
-     <input type="text" class="form-control typeahead" id="idesc" data-show-subtext="true" data-live-search="true">
+     <input type="text"  class="form-control typeahead" id="idesc" data-show-subtext="true" data-live-search="true">
  <label for="qty">Quantity</label>
   <input type="Number" class="form-control" id="quantity" name="quantity" value =1>
   <input type="hidden" class="form-control" id="item" name="item">
@@ -144,10 +147,14 @@ if(isset($_GET['s']))
        $(document).ready(function(){
       var i=0;
      $("#add_row").click(function(){ 
-     
+      if((document.getElementById("idesc").value)!="")
+     { 
       $('#tab_logic').append("<tr> <td><input name='name1' type='text' placeholder='Name' class='form-control' value="+document.getElementById('idesc').value+"> </td><td><input  name='quantity' type='text'   value="+document.getElementById('quantity').value+"  class='form-control'></td><td><a id='delete_row' class='btn btn-primary pull-left'onclick='deleteRow(this)'>Delete</a></td></tr>");
       i++; 
-  });
+  document.getElementById("idesc").value = "";
+  document.getElementById("quantity").value = 1;
+  document.getElementById("idesc").focus();
+  } });
      
 });
 </script>

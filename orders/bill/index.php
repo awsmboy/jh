@@ -64,7 +64,7 @@ if(isset($_GET['s']))
  
   <div class="form-group">
     <label for="pno">Enter Customer Phone Number</label>
-    <input type="text" name="pno" required class="form-control" id="pno" placeholder="ex-888888888" minlength="10" maxlength="10">
+    <input type="text" name="pno" required class="form-control" id="pno" placeholder="ex-888888888" pattern="[789][0-9]{9}" title="Enter 10 digit phone number starting with 7,8 or 9">
   </div>
   <?php
   if(isset($_POST['pno']))

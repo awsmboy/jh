@@ -47,8 +47,8 @@
 	</div>
 	</div>
 
-
-<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+<center> 
+<div class="table-responsive" id="tbl"><!--this is used for responsive display in mobile and other devices-->  
   
   
     <table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
@@ -105,9 +105,27 @@
          ?>  
   
     </table>  
-        </div>  
+        </div>
+        <input type="button" class="btn btn-primary" value="Print" name="print" onclick="printrep()"></center> 
+
 </div>  
-</div>  
+</div>
+<script type="text/javascript"> 
+function printrep()
+{
+var prtContent = document.getElementById("tbl");
+var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+ WinPrint.document.write(' <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <center> <h2><b>Report</B></h2></center>');
+ 
+ WinPrint.document.write(prtContent.innerHTML);
+
+WinPrint.document.close();
+WinPrint.print();
+WinPrint.close();
+}
+
+</script>
+
   <?php
     include("footer.php");
 ?>

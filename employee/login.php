@@ -54,7 +54,7 @@ if (isset($_POST['login']))
 
 session_start();
 $mail=$_POST['user'];
-$pass=$_POST['password'];
+$pass=md5($_POST['password']);
 
 $sql="select * from employee where mail='$mail' AND password='$pass'";
 
