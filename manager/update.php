@@ -63,7 +63,7 @@
                 <th>User Name</th>  
                 <th>User E-mail</th>
                 <th>User Phone</th>  
-                <th>User Pass</th>  
+               
                 <th>Update User</th>  
             </tr>  
             </thead>  
@@ -95,7 +95,7 @@
                 <td><?php echo $data['name'];  ?></td>  
                 <td><?php echo $data['mail'];  ?></td>  
                 <td><?php echo $data['phone'];  ?></td>
-                <td><?php echo $data['password'];  ?></td>
+                
                 <td><a href="updateemp.php?eid=<?php echo $data['eid'];?>"><button class="btn btn-warning"><span class="fa fa-edit"></span> Update</button></a></td>  
            </tr>
            <?php
@@ -123,7 +123,7 @@
             <td><?php echo $row['name'];  ?></td>  
             <td><?php echo $row['mail'];  ?></td>  
             <td><?php echo $row['phone'];  ?></td>
-            <td><?php echo $row['password'];  ?></td>  
+            
             <td><a href="updateemp.php?eid=<?php echo $row['eid'];?>"><button class="btn btn-warning"><span class="fa fa-edit"></span> Update</button></a></td>
         </tr> 
         <?php } 

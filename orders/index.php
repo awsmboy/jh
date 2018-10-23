@@ -95,7 +95,7 @@
 
  <div class="form-group">
    <label for="iname">Item Name</label>
-     <input type="text"  class="form-control typeahead" id="idesc" data-show-subtext="true" data-live-search="true">
+     <input type="text"  class="form-control typeahead" id="idesc" data-show-subtext="true" data-live-search="true" autocomplete="off">
  <label for="qty">Quantity</label>
   <input type="Number" class="form-control" id="quantity" name="quantity" value =1>
   <input type="hidden" class="form-control" id="item" name="item">

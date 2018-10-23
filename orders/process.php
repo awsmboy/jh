@@ -8,20 +8,28 @@ $iid;
 session_start();
 $eid=$_SESSION['eid'];
 if(isset($_POST['pno'])){
-	$query=mysqli_query($con, "SELECT COUNT(*) FROM customer WHERE pno=".$_POST['pno']);
+	$query=mysqli_query($con, "SELECT  COUNT(*) as c FROM customer WHERE pno=".$_POST['pno']);
+	//echo "SELECT COUNT(*) as c FROM customer WHERE pno=".$_POST['pno'];
 	$row=mysqli_fetch_assoc($query);
 	//echo (sizeof($row));
 	//echo "select * from customer where pno =".$_POST['pno'];
-	
-	if(sizeof($row))
+	echo $row['c'];
+	if($row['c']==0)
 	{	 
 		$query=mysqli_query($con, "INSERT INTO `customer`(`name`, `pno`, `address`) VALUES ('".$_POST['name']."',".$_POST['pno'].",'".$_POST['Address']."')");
 		//$con->query($query);
-		//var_dump($query);
+		var_dump($query);
 	$query=mysqli_query($con,"select cid from customer where pno=".$_POST['pno']);
 	$row=mysqli_fetch_assoc($query);
 	$cid=$row['cid'];
 		
+	}else
+	{		$query=mysqli_query($con,"select cid from customer where pno=".$_POST['pno']);
+	$row=mysqli_fetch_assoc($query);
+	$cid=$row['cid'];
+			$query=mysqli_query($con, "UPDATE `customer` SET `name`= '".$_POST['name']."' , `address`='".$_POST['Address']."' where `pno` = ".$_POST['pno']." ");
+
+//echo "UPDATE `customer` SET `name`= '".$_POST['name']."' , `pno` = ".$_POST['pno']." , `address`='".$_POST['Address']."'";
 	}
 }
 if(isset($_SESSION['eid']))
@@ -50,6 +58,6 @@ for($i=0;$i<sizeof($data);$i++)
     </script>
     <?php
 }
-//echo mysql_error($con);
+
     header('location:index.php?s=1');
     ?>
